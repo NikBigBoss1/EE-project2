@@ -1,0 +1,62 @@
+[
+    {
+        "collocation": "final step",
+        "type": "camelCase",
+        "choices": [
+            "finelStep",
+            "finalStep",
+            "finalSteep",
+            "finnalStpe"
+        ]
+    },
+    {
+        "collocation": "final step",
+        "type": "kebab-case",
+        "choices": [
+            "fnial-steep",
+            "finel-setp",
+            "fnial-stpe",
+            "final-step"
+        ]
+    },
+    {
+        "collocation": "bright star",
+        "type": "camelCase",
+        "choices": [
+            "brightSter",
+            "bryhgtStar",
+            "brightStar",
+            "brigtStar"
+        ]
+    },
+    {
+        "collocation": "bright star",
+        "type": "kebab-case",
+        "choices": [
+            "bryght-ster",
+            "bright-star",
+            "brigth-star",
+            "brigh-star"
+        ]
+    },
+    {
+        "collocation": "silent wave",
+        "type": "camelCase",
+        "choices": [
+            "silintWaev",
+            "silentWave",
+            "silantWave",
+            "slentWav"
+        ]
+    },
+    {
+        "collocation": "silent wave",
+        "type": "kebab-case",
+        "choices": [
+            "silent-wave",
+            "slent-waev",
+            "silant-wav",
+            "silnt-wave"
+        ]
+    }
+]
