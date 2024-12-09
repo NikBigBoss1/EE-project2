@@ -1,37 +1,52 @@
 <template>
-    <div class="experiment-container">
-      <header class="project-name">Identifier Readability</header>
-  
-      <div class="timer">Time Elapsed: {{ timerInSeconds }} seconds</div>
-  
-      <CollocationBox
-        v-if="currentCollocation"
-        ref="collocationBoxRef"
-        :collocation="currentCollocation.collocation"
-        :choices="currentCollocation.choices"
-        :type="currentCollocation.type"
-        @correctChoiceSelected="onCorrectChoice"
-      />
-  
-      <div v-if="showThankYouMessage">
-        <p>Thank you for your time!</p>
-        <NuxtLink 
-            to="/" 
-            class="next-button"
-        >   Finish
+  <div class="flex flex-col justify-center items-center p-5 min-h-screen box-border">
+    <Header />
+
+    <div class="flex flex-col items-center" v-if="showCollocationBox">
+      <transition name="slide-fade">
+        <div class="w-full max-w-lg bg-[#f5f5f5] rounded-full h-4 mb-6">
+          <div class="bg-[#01c2cd] h-4 rounded-full transition-all duration-300"
+            :style="{ width: progressPercentage + '%' }"></div>
+        </div>
+      </transition>
+
+      <transition name="slide-fade">
+        <CollocationBox ref="collocationBoxRef" :collocation="currentCollocation?.collocation"
+          :choices="currentCollocation?.choices" :type="currentCollocation?.type"
+          @correctChoiceSelected="onCorrectChoice" />
+
+      </transition>
+
+      <transition name="slide-fade">
+        <div class="text-[20px] font-roboto text-[#f5f5f5] pt-8">
+          Time Elapsed: {{ timerInSeconds }} seconds
+        </div>
+      </transition>
+    </div>
+
+    <transition name="fade">
+      <div v-if="showThankYouMessage" class="text-center mt-10 flex flex-col items-center">
+        <p class="text-[20px] font-roboto text-[#f5f5f5] pb-10">
+          Thank you for your time!
+        </p>
+        <NuxtLink to="/"
+          class="bg-[#01c2cd] text-[#f5f5f5] px-6 py-3 rounded-full font-roboto font-light hover:shadow-[0_0_15px_#f5f5f5] transition-shadow duration-300">
+          Finish
         </NuxtLink>
       </div>
+    </transition>
 
-      <button
-        v-if="showNextButton"
-        class="next-button"
-        @click="goToNextCollocation"
-      >
+    <div class=" mt-8 h-12">
+      <button v-if="showNextButton"
+        class="bg-[#01c2cd] text-[#f5f5f5] px-6 py-3 rounded-full font-roboto font-light hover:shadow-[0_0_15px_#f5f5f5] transition-shadow duration-300"
+        @click="goToNextCollocation">
         Next
       </button>
     </div>
-  </template>
-  
+
+  </div>
+</template>
+
 <script setup>
 import { ref, onMounted, computed } from "vue";
 import CollocationBox from "~/components/CollocationBox.vue";
@@ -51,6 +66,7 @@ let timerIntervalInMilliseconds = null;
 
 const collocationBoxRef = ref(null); // Reference to CollocationBox component
 const showThankYouMessage = ref(false);
+const showCollocationBox = ref(true);
 
 
 const fetchCollocations = async () => {
@@ -61,8 +77,8 @@ const fetchCollocations = async () => {
 
 // Start and stop timer in seconds and milliseconds
 const startTimerInSeconds = () => {
-    timerInSeconds.value = 0;
-    timerIntervalInSeconds = setInterval(() => {
+  timerInSeconds.value = 0;
+  timerIntervalInSeconds = setInterval(() => {
     timerInSeconds.value++;
   }, 1000);
 };
@@ -71,14 +87,24 @@ const stopTimerInSeconds = () => {
 };
 
 const startTimerInMilliseconds = () => {
-    timerInMilliseconds.value = 0;
-    timerIntervalInMilliseconds = setInterval(() => {
+  timerInMilliseconds.value = 0;
+  timerIntervalInMilliseconds = setInterval(() => {
     timerInMilliseconds.value++;
   }, 1);
 };
 const stopTimerInMilliseconds = () => {
   clearInterval(timerIntervalInMilliseconds);
 };
+
+const progressPercentage = computed(() => {
+  if (collocations.value.length === 0) return 0;
+
+  if (currentIndex.value === collocations.value.length - 1 && showThankYouMessage.value) {
+    return 100;
+  }
+
+  return ((currentIndex.value + (showNextButton.value ? 1 : 0)) / collocations.value.length) * 100;
+});
 //////////////////////////////////////////
 
 
@@ -89,7 +115,7 @@ const goToNextCollocation = () => {
     showNextButton.value = false;
     startTimerInSeconds();
     startTimerInMilliseconds();
-   }
+  }
 };
 
 const currentCollocation = computed(() => collocations.value[currentIndex.value]);
@@ -108,7 +134,10 @@ const onCorrectChoice = (firstGuess) => {
 
   if (currentIndex.value === collocations.value.length - 1) {
     saveResultToDB();
-    showThankYouMessage.value = true;
+    setTimeout(() => {
+      showCollocationBox.value = false;
+      showThankYouMessage.value = true;
+    }, 1000);
   } else {
     showNextButton.value = true;
   }
@@ -144,86 +173,26 @@ onMounted(() => {
   });
 });
 </script>
-  
-
-
-
-
-
 
 <style scoped>
-/* Experiment name styling */
-.project-name {
-  font-size: 40px;
-  font-weight: 600;
-  font-family: 'Griffy', sans-serif;
-  color: #333;
-  margin-bottom: 5vh;
-  text-align: center;
-}
-.experiment-container {
-  text-align: center;
-  padding: 20px;
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: opacity 2s ease, transform 2s ease;
 }
 
-.experiment-name {
-  font-size: 2rem;
-  margin-bottom: 20px;
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  opacity: 0;
+  transform: translateY(20px);
 }
 
-.timer {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  color: #333;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 2s ease;
 }
 
-/* Choice Box Styling */
-.choice-box {
-  margin: 10px;
-  padding: 20px;
-  border: 2px solid #ddd;
-  border-radius: 5px;
-  width: 150px;
-  height: 100px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f9f9f9;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #333;
-  transition: border-color 0.1s ease;
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
-
-.choice-box.correct {
-  border-color: green;
-  background-color: #e6ffe6;
-}
-
-.choice-box.incorrect {
-  border-color: red;
-  background-color: #ffe6e6;
-}
-
-/* Next Button Styling */
-.next-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #007acc;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.next-button:hover {
-  background-color: #005fa3;
-}
-
-.next-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-  </style>
+</style>

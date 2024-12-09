@@ -1,20 +1,23 @@
 <template>
-    <div>
+  <div>
+    <h2 class="text-[24px] font-roboto text-[#f5f5f5] text-center pb-4">{{ collocation }}</h2>
 
-      <h2>{{ collocation }}</h2>
-      
-      <div class="collocation-boxes">
-        <div
-          v-for="(choice, index) in choices"
-          :key="index"
-          class="choice-box"
-          :class="{ correct: isCorrect(choice), incorrect: isIncorrect(choice) }"
-          @click="handleChoiceClick(choice, $event)"
-        >
-          {{ choice }}
-        </div>
+    <div class="flex flex-wrap justify-center gap-10 mt-5">
+      <div
+        v-for="(choice, index) in choices"
+        :key="index"
+        class="flex items-center justify-center w-[150px] h-[100px] rounded-lg bg-[#f9f9f9] cursor-pointer text-[#333] font-roboto font-bold text-[16px] transition-transform transform hover:scale-105"
+        :class="{ 
+          'shadow-[0_0_15px_5px_green] bg-[#e6ffe6] animate-zoom': isCorrect(choice), 
+          'animate-rotate-shake': isIncorrect(choice),
+          'pointer-events-none': isCorrectSelected 
+        }"
+        @click="handleChoiceClick(choice, $event)"
+      >
+        {{ choice }}
       </div>
     </div>
+  </div>
 </template>
 
 <script setup>
@@ -42,6 +45,7 @@ const firstGuess = ref(null);
 
 const selectedIncorrectChoice = ref(null);
 const selectedCorrectChoice = ref(null);
+const isCorrectSelected = ref(false);
 
 const isCorrect = (choice) => {
   return selectedCorrectChoice.value === choice;
@@ -52,6 +56,7 @@ const isIncorrect = (choice) => {
 
 function resetFirstGuess() {
   firstGuess.value = null;
+  isCorrectSelected.value = false;
 }
 
 defineExpose({
@@ -92,6 +97,7 @@ const handleChoiceClick = (choice, event) => {
 
   if (choice === normalizedCollocation) {
     selectedCorrectChoice.value = choice;
+    isCorrectSelected.value = true;
     event.target.classList.add("correct");
     emit("correctChoiceSelected", firstGuess.value);
   } else {
@@ -106,42 +112,39 @@ const handleChoiceClick = (choice, event) => {
 
 
 
+<style scoped> 
 
-
-<style scoped>
-.collocation-boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
+@keyframes zoom {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
 }
 
-.choice-box {
-  margin: 10px;
-  padding: 20px;
-  border: 2px solid #ddd;
-  border-radius: 5px;
-  width: 150px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f9f9f9;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #333;
-  transition: border-color 0.1s ease;
+@keyframes glow-shake {
+  0%, 100% {
+    transform: rotate(0deg);
+    box-shadow: 0 0 0 0 red; /* No glow at the start and end */
+  }
+  25%, 75% {
+    transform: rotate(-10deg);
+    box-shadow: 0 0 15px 5px red; 
+    background-color: #ffe6e6;/* Red glow during shake */
+  }
+  50% {
+    transform: rotate(10deg);
+    box-shadow: 0 0 15px 5px red;
+    background-color: #ffe6e6; /* Red glow during shake */
+  }
 }
 
-.choice-box.correct {
-  border-color: green;
-  background-color: #e6ffe6;
+.animate-zoom {
+  animation: zoom 500ms ease-in-out;
 }
 
-.choice-box.incorrect {
-  border-color: red;
-  background-color: #ffe6e6;
+.animate-rotate-shake {
+  animation: glow-shake 500ms ease;
 }
 </style>

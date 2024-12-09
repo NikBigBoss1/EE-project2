@@ -2,61 +2,151 @@
     {
         "collocation": "final step",
         "type": "camelCase",
-        "choices": [
-            "finelStep",
-            "finalStep",
-            "finalSteep",
-            "finnalStpe"
-        ]
+        "choices": ["finelStep", "finalStep", "finalSteep", "finnalStpe"]
+    },
+    {
+        "collocation": "bright star",
+        "type": "camelCase",
+        "choices": ["brightSter", "bryhgtStar", "brightStar", "brigtStar"]
+    },
+    {
+        "collocation": "silent wave",
+        "type": "kebab-case",
+        "choices": ["silent-wave", "slent-waev", "silant-wav", "silnt-wave"]
+    },
+    {
+        "collocation": "green field",
+        "type": "camelCase",
+        "choices": ["greenFeeld", "grenField", "greenField", "greeneFld"]
+    },
+    {
+        "collocation": "fast runner",
+        "type": "kebab-case",
+        "choices": ["fasr-runner", "fast-runner", "faast-runnr", "fust-runer"]
+    },
+    {
+        "collocation": "blue ocean",
+        "type": "camelCase",
+        "choices": ["blueOcen", "blueOcean", "bleueOcian", "bleuOcean"]
+    },
+    {
+        "collocation": "swift arrow",
+        "type": "kebab-case",
+        "choices": ["swfit-aero", "swift-arrow", "sweft-arrw", "swft-arrow"]
+    },
+    {
+        "collocation": "happy dream",
+        "type": "camelCase",
+        "choices": ["happpyDram", "happiDrem", "happyDream", "hapieDreim"]
+    },
+    {
+        "collocation": "mighty force",
+        "type": "kebab-case",
+        "choices": ["mighty-force", "mighy-froce", "myghty-forse", "migthy-forc"]
+    },
+    {
+        "collocation": "golden crown",
+        "type": "camelCase",
+        "choices": ["golenCron", "goldenCrown", "golddenCown", "goldanCrwon"]
+    },
+    {
+        "collocation": "shining star",
+        "type": "kebab-case",
+        "choices": ["shineing-str", "shining-star", "shineng-ster", "shiinng-satr"]
+    },
+    {
+        "collocation": "silver moon",
+        "type": "camelCase",
+        "choices": ["sylvrMoon", "silvarMoon", "silverMonn", "silverMoon"]
+    },
+    {
+        "collocation": "broken chain",
+        "type": "kebab-case",
+        "choices": ["broaken-chenn", "brokin-chnae", "broken-chain", "broken-chin"]
+    },
+    {
+        "collocation": "fiery flame",
+        "type": "camelCase",
+        "choices": ["firieFlam", "fyeriFlame", "fieryFlame", "fieyFlmme"]
+    },
+    {
+        "collocation": "clear sky",
+        "type": "kebab-case",
+        "choices": ["clear-sky", "cler-skei", "clear-skie", "claerr-skyy"]
     },
     {
         "collocation": "final step",
         "type": "kebab-case",
-        "choices": [
-            "fnial-steep",
-            "finel-setp",
-            "fnial-stpe",
-            "final-step"
-        ]
-    },
-    {
-        "collocation": "bright star",
-        "type": "camelCase",
-        "choices": [
-            "brightSter",
-            "bryhgtStar",
-            "brightStar",
-            "brigtStar"
-        ]
+        "choices": ["fnial-steep", "finel-setp", "fnial-stpe", "final-step"]
     },
     {
         "collocation": "bright star",
         "type": "kebab-case",
-        "choices": [
-            "bryght-ster",
-            "bright-star",
-            "brigth-star",
-            "brigh-star"
-        ]
+        "choices": ["bryght-ster", "bright-star", "brigth-star", "brigh-star"]
     },
     {
         "collocation": "silent wave",
         "type": "camelCase",
-        "choices": [
-            "silintWaev",
-            "silentWave",
-            "silantWave",
-            "slentWav"
-        ]
+        "choices": ["silintWaev", "silentWave", "silantWave", "slentWav"]
     },
     {
-        "collocation": "silent wave",
+        "collocation": "green field",
         "type": "kebab-case",
-        "choices": [
-            "silent-wave",
-            "slent-waev",
-            "silant-wav",
-            "silnt-wave"
-        ]
+        "choices": ["gren-feild", "green-field", "green-fild", "grean-feeld"]
+    },
+    {
+        "collocation": "fast runner",
+        "type": "camelCase",
+        "choices": ["fastRunne", "faastRunr", "fastRunner", "fastrRuner"]
+    },
+    {
+        "collocation": "blue ocean",
+        "type": "kebab-case",
+        "choices": ["bleue-ocean", "blue-ocean", "blue-ocaen", "blu-ocean"]
+    },
+    {
+        "collocation": "swift arrow",
+        "type": "camelCase",
+        "choices": ["swfitArow", "swiftArrw", "swiftArrow", "sweftArro"]
+    },
+    {
+        "collocation": "happy dream",
+        "type": "kebab-case",
+        "choices": ["hapy-dreim", "hapie-drem", "hapyp-dram", "happy-dream"]
+    },
+    {
+        "collocation": "mighty force",
+        "type": "camelCase",
+        "choices": ["migthyForse", "mightyForce", "myghteForce", "mighteyForc"]
+    },
+    {
+        "collocation": "golden crown",
+        "type": "kebab-case",
+        "choices": ["gloden-cown", "goldan-crwon", "golden-crown", "goledn-crown"]
+    },
+    {
+        "collocation": "shining star",
+        "type": "camelCase",
+        "choices": ["shineingSatr", "shinengStarr", "shiningStar", "shinningStar"]
+    },
+    {
+        "collocation": "silver moon",
+        "type": "kebab-case",
+        "choices": ["sylvr-monn", "silver-moon", "silvr-mon", "silvar-monn"]
+    },
+    {
+        "collocation": "broken chain",
+        "type": "camelCase",
+        "choices": ["brokanChin", "brokenChain", "brokeenChain", "brokinChane"]
+    },
+    {
+        "collocation": "fiery flame",
+        "type": "kebab-case",
+        "choices": ["firry-flmme", "fiery-flame", "fyeri-flme", "firie-flamm"]
+    },
+    {
+        "collocation": "clear sky",
+        "type": "camelCase",
+        "choices": ["clerSki", "clearSky", "cleerrSkey", "cleerSkye"]
     }
 ]

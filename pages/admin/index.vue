@@ -1,11 +1,16 @@
 <template>
-  <div class="results-page">
-        <h1>Download Experiment Results</h1>
-    <button @click="downloadCSV" class="download-button">Download CSV</button>
+  <div class="flex flex-col justify-center items-center p-5 h-screen box-border">
+    <header class="text-[40px] font-roboto font-light text-[#f5f5f5] mb-[5vh] text-center">
+      Download Experiment Results
+    </header>
+    <button
+      @click="downloadCSV"
+      class="bg-[#01c2cd] text-[#f5f5f5] px-6 py-3 rounded-full font-roboto font-light hover:shadow-[0_0_15px_#f5f5f5] transition-shadow duration-300"
+    >
+      Download CSV
+    </button>
   </div>
 </template>
-
-
 
 <script setup>
 import { ref } from "vue";
@@ -80,27 +85,6 @@ const downloadCSV = async () => {
 // Fetch results initially
 fetchResults();
 </script>
-  
-
-
 
 <style scoped>
-.results-page {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.download-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.download-button:hover {
-  background-color: #45a049;
-}
 </style>

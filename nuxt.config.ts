@@ -6,10 +6,10 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'EE-project 2',
-     charset: 'utf-8',
-     viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover',
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover',
       meta: [
-        {name: 'color-scheme', content: 'light dark'},
+        { name: 'color-scheme', content: 'light dark' },
       ],
 
     }
@@ -20,11 +20,21 @@ export default defineNuxtConfig({
     'nuxt-icon',
     'nuxt-mongoose',
   ],
-  css: ['~/styles/normalize.css'],
+  css: [
+    '/styles/normalize.css',
+    '/styles/tailwind.css'
+  ],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
   googleFonts: {
     families: {
-      'Roboto+Flex': true,
-      'Griffy': true,
+      'Roboto Mono': true,
+      'Quicksand': true,
+      'Press Start 2P': true,
     }
   },
   mongoose: {
