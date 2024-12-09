@@ -2,12 +2,12 @@
     {
         "collocation": "final step",
         "type": "camelCase",
-        "choices": ["finelStep", "finalStep", "finalSteep", "finnalStpe"]
+        "choices": ["finelStep", "finalSteep", "finnalStpe", "finalStep"]
     },
     {
         "collocation": "bright star",
         "type": "camelCase",
-        "choices": ["brightSter", "bryhgtStar", "brightStar", "brigtStar"]
+        "choices": ["brightSter", "bryhgtStar", "brigtStar", "brightStar"]
     },
     {
         "collocation": "silent wave",
@@ -27,7 +27,7 @@
     {
         "collocation": "blue ocean",
         "type": "camelCase",
-        "choices": ["blueOcen", "blueOcean", "bleueOcian", "bleuOcean"]
+        "choices": ["blueOcen", "bleueOcian", "blueOcean", "bleuOcean"]
     },
     {
         "collocation": "swift arrow",
@@ -37,32 +37,32 @@
     {
         "collocation": "happy dream",
         "type": "camelCase",
-        "choices": ["happpyDram", "happiDrem", "happyDream", "hapieDreim"]
+        "choices": ["happyDream", "happpyDram", "happiDrem", "hapieDreim"]
     },
     {
         "collocation": "mighty force",
         "type": "kebab-case",
-        "choices": ["mighty-force", "mighy-froce", "myghty-forse", "migthy-forc"]
+        "choices": ["mighy-froce", "mighty-force", "myghty-forse", "migthy-forc"]
     },
     {
         "collocation": "golden crown",
         "type": "camelCase",
-        "choices": ["golenCron", "goldenCrown", "golddenCown", "goldanCrwon"]
+        "choices": ["golenCron", "golddenCown", "goldanCrwon", "goldenCrown"]
     },
     {
         "collocation": "shining star",
         "type": "kebab-case",
-        "choices": ["shineing-str", "shining-star", "shineng-ster", "shiinng-satr"]
+        "choices": ["shineing-str", "shineng-ster", "shining-star", "shiinng-satr"]
     },
     {
         "collocation": "silver moon",
         "type": "camelCase",
-        "choices": ["sylvrMoon", "silvarMoon", "silverMonn", "silverMoon"]
+        "choices": ["silverMoon", "sylvrMoon", "silvarMoon", "silverMonn"]
     },
     {
         "collocation": "broken chain",
         "type": "kebab-case",
-        "choices": ["broaken-chenn", "brokin-chnae", "broken-chain", "broken-chin"]
+        "choices": ["broaken-chenn", "brokin-chnae", "broken-chin", "broken-chain"]
     },
     {
         "collocation": "fiery flame",
@@ -72,17 +72,17 @@
     {
         "collocation": "clear sky",
         "type": "kebab-case",
-        "choices": ["clear-sky", "cler-skei", "clear-skie", "claerr-skyy"]
+        "choices": ["cler-skei", "clear-sky", "clear-skie", "claerr-skyy"]
     },
     {
         "collocation": "final step",
         "type": "kebab-case",
-        "choices": ["fnial-steep", "finel-setp", "fnial-stpe", "final-step"]
+        "choices": ["fnial-steep",  "final-step", "finel-setp", "fnial-stpe"]
     },
     {
         "collocation": "bright star",
         "type": "kebab-case",
-        "choices": ["bryght-ster", "bright-star", "brigth-star", "brigh-star"]
+        "choices": ["bright-star", "bryght-ster", "brigth-star", "brigh-star"]
     },
     {
         "collocation": "silent wave",
@@ -92,7 +92,7 @@
     {
         "collocation": "green field",
         "type": "kebab-case",
-        "choices": ["gren-feild", "green-field", "green-fild", "grean-feeld"]
+        "choices": ["gren-feild", "green-fild", "grean-feeld", "green-field"]
     },
     {
         "collocation": "fast runner",
@@ -112,7 +112,7 @@
     {
         "collocation": "happy dream",
         "type": "kebab-case",
-        "choices": ["hapy-dreim", "hapie-drem", "hapyp-dram", "happy-dream"]
+        "choices": ["hapy-dreim", "hapie-drem", "happy-dream", "hapyp-dram"]
     },
     {
         "collocation": "mighty force",
@@ -127,7 +127,7 @@
     {
         "collocation": "shining star",
         "type": "camelCase",
-        "choices": ["shineingSatr", "shinengStarr", "shiningStar", "shinningStar"]
+        "choices": ["shiningStar", "shineingSatr", "shinengStarr", "shinningStar"]
     },
     {
         "collocation": "silver moon",
@@ -137,12 +137,12 @@
     {
         "collocation": "broken chain",
         "type": "camelCase",
-        "choices": ["brokanChin", "brokenChain", "brokeenChain", "brokinChane"]
+        "choices": ["brokanChin", "brokeenChain", "brokinChane", "brokenChain"]
     },
     {
         "collocation": "fiery flame",
         "type": "kebab-case",
-        "choices": ["firry-flmme", "fiery-flame", "fyeri-flme", "firie-flamm"]
+        "choices": ["firry-flmme", "fyeri-flme", "fiery-flame", "firie-flamm"]
     },
     {
         "collocation": "clear sky",
