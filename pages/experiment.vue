@@ -2,6 +2,14 @@
   <div class="flex flex-col justify-center items-center p-5 min-h-screen box-border">
     <Header />
 
+    <!-- Loading Window -->
+    <div v-if="isLoading" class="flex items-center justify-center min-h-screen">
+      <div class="text-center text-[#f5f5f5] font-roboto">
+        <p class="mb-4">Loading, please wait...</p>
+        <div class="spinner border-t-[#01c2cd] border-4 border-solid rounded-full h-8 w-8 animate-spin"></div>
+      </div>
+    </div>
+
     <div class="flex flex-col items-center" v-if="showCollocationBox">
       <transition name="slide-fade">
         <div class="w-full max-w-lg bg-[#f5f5f5] rounded-full h-4 mb-6">
@@ -67,12 +75,15 @@ let timerIntervalInMilliseconds = null;
 const collocationBoxRef = ref(null); // Reference to CollocationBox component
 const showThankYouMessage = ref(false);
 const showCollocationBox = ref(true);
+const isLoading = ref(true);
 
 
 const fetchCollocations = async () => {
+  isLoading.value = true;
   const response = await fetch("/api/collocations/get");
   const data = await response.json();
   collocations.value = data;
+  isLoading.value = false;
 };
 
 // Start and stop timer in seconds and milliseconds
