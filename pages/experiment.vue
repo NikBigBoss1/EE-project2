@@ -3,11 +3,9 @@
     <Header />
 
     <!-- Loading Window -->
-    <div v-if="isLoading" class="flex items-center justify-center min-h-screen">
-      <div class="text-center text-[#f5f5f5] font-roboto">
-        <p class="mb-4">Loading, please wait...</p>
-        <div class="spinner border-t-[#01c2cd] border-4 border-solid rounded-full h-8 w-8 animate-spin"></div>
-      </div>
+    <div v-if="isLoading" class="flex flex-col items-center justify-center">
+        <p class="text-center text-[#f5f5f5] text-[40px] font-roboto mb-4">Loading, please wait...</p>
+        <div class="spinner border-t-[#01c2cd] border-4 border-solid rounded-full h-16 w-16 animate-spin"></div>
     </div>
 
     <div class="flex flex-col items-center" v-if="showCollocationBox">
