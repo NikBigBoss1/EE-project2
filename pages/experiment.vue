@@ -78,10 +78,12 @@ const isLoading = ref(true);
 
 const fetchCollocations = async () => {
   isLoading.value = true;
+  showCollocationBox.value = false;
   const response = await fetch("/api/collocations/get");
   const data = await response.json();
   collocations.value = data;
   isLoading.value = false;
+  showCollocationBox.value = true;
 };
 
 // Start and stop timer in seconds and milliseconds
