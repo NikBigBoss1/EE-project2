@@ -4,7 +4,7 @@
 
     <div class="grid grid-cols-2 gap-10 w-full max-w-[800px]">
       <div class="bg-[#f5f5f5] p-5 rounded-lg shadow-[0_0_15px_#f5f5f5] min-h-[100px]">
-        <h6 class="font-roboto text-[20px] text-[#0d0d0d] pb-3">Experience</h6>
+        <h6 class="font-roboto text-[20px] text-[#0d0d0d] pb-3">Programming Experience</h6>
         <select
           id="experience"
           v-model="form.experience"
